@@ -18,5 +18,9 @@ class Post(models.Model):
         ordering = ["-created_date"]
         #verbose_name = "پست"
         #verbose_name_plural = "پست‌ها"
+
+    def __str__(self):
+        return self.title
+
        
  
