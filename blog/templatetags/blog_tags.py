@@ -17,7 +17,7 @@ def function():
 def snippet(value, arg=20):
     return value[:arg] + "..."
 
-@register.inclusion_tag('popular-posts.html')
-def popular_posts():
-    posts =  Post.objects.filter(status=1).order_by('-published_date')[:1]
+@register.inclusion_tag('blog/blog-latest-post.html')
+def latest_posts(arg=3):
+    posts =  Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts':posts}
